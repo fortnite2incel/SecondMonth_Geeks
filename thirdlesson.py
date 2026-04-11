@@ -32,7 +32,9 @@ class Hero(ABC):
         print(f"Привет, я {self.name}, мой уровень {self.level}")
     
     def rest(self):
-        self.__health += 1
+        self.__health += 1  #Доступен только внутри класса Hero
+                            # Нельзя напрямую изменить извне: hero.__health вызовет ошибку
+                            # Для доступа можно добавить геттер (метод get_health())
         print(f"{self.name} отдыхает")
     
     def get_health(self):
